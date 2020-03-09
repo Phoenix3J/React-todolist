@@ -12,7 +12,7 @@ const TodoForm = ({ addTodo }) => {
       return;
     }
 
-    alert(value);
+    addTodo(value);
     setValue("");
   };
 
