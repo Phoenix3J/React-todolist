@@ -144,6 +144,7 @@ html {
   margin: 16px 0 0;
   font-family: "homenaje", sans-serif;
   font-size: 30px;
+  cursor: pointer;
 
   border-bottom: 1px solid var(--main--orange--color);
 }

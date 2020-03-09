@@ -11,7 +11,7 @@ const TodoForm = ({ addTodo, showAdd }) => {
       alert("No blank todo!");
       return;
     }
-    //set length inputa
+    //set length inputan
     if (value.length > 35) {
       alert("please yg pendek2 aja cok");
       setValue("");

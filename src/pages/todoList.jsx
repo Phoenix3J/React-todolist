@@ -7,15 +7,22 @@ import Todos from "../components/todos";
 
 const TodoList = () => {
   const [todos, setTodos] = useState([
-    { text: "Learn React1" },
-    { text: "learn react 2" },
-    { text: "learn react 3" }
+    { text: "Learn React1", isCompleted: false },
+    { text: "learn react 2", isCompleted: false },
+    { text: "learn react 3", isCompleted: false }
   ]);
 
   const [showAdd, setShowAdd] = useState(false);
 
   const addTodo = value => {
-    const addedTodo = [...todos, { text: value }];
+    const addedTodo = [...todos, { text: value, isCompleted: false }];
+
+    setTodos(addedTodo);
+  };
+
+  const completeTodo = index => {
+    const addedTodo = [...todos];
+    addedTodo[index].isCompleted = !addedTodo[index].isCompleted;
 
     setTodos(addedTodo);
   };
@@ -24,13 +31,13 @@ const TodoList = () => {
     setShowAdd(!showAdd);
   };
 
-  console.log("showAdd", showAdd);
+  console.log("todos", todos);
 
   return (
     <Paper>
       <Header showAddToggle={showAddToggle} showAdd={showAdd} />
       <TodoForm addTodo={addTodo} showAdd={showAdd} />
-      <Todos todos={todos} />
+      <Todos todos={todos} completeTodo={completeTodo} />
     </Paper>
   );
 };
