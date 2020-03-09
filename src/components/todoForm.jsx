@@ -6,9 +6,15 @@ const TodoForm = ({ addTodo, showAdd }) => {
 
   const handleFormSubmit = e => {
     e.preventDefault();
-
+    //set kalo nge add nya kosong
     if (!value) {
       alert("No blank todo!");
+      return;
+    }
+    //set length inputa
+    if (value.length > 35) {
+      alert("please yg pendek2 aja cok");
+      setValue("");
       return;
     }
 
